@@ -1,32 +1,5 @@
-
 #include <iostream>
-#include <vector>
-#include <exception>
 #include "SymbolTable.h"
-
-using namespace std;
-
-SymbolTable::SymbolTable(int cap)
-{
-    this->m = cap;
-    this->dim = 0;
-    this->T = (SLL*)malloc(cap * sizeof(SLL));
-    for(int i = 0; i < cap; i++)
-        this->T[i].root = NULL;
-}
-
-
-// djb2
-int SymbolTable::hash(TKey key) const
-{
-    int h = 5381;
-
-    for (int i = 0; i <= key.length(); i++)
-        h = ((h << 5) + h) + key[i];
-    
-    return abs(h) % this->m;
-}
-
 
 
 void SymbolTable::details()
@@ -50,6 +23,28 @@ void SymbolTable::details()
 	}
 
 	cout << endl;
+}
+
+
+SymbolTable::SymbolTable(int cap)
+{
+    this->m = cap;
+    this->dim = 0;
+    this->T = (SLL*)malloc(cap * sizeof(SLL));
+    for(int i = 0; i < cap; i++)
+        this->T[i].root = NULL;
+}
+
+
+// djb2
+int SymbolTable::hash(TKey key) const
+{
+    int h = 5381;
+
+    for (int i = 0; i <= key.length(); i++)
+        h = ((h << 5) + h) + key[i];
+    
+    return std::abs(h) % this->m;
 }
 
 

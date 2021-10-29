@@ -1,5 +1,5 @@
 #include <iostream>
-#include "symboltable.h"
+#include "SymbolTable.h"
 
 
 int main()
