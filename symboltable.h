@@ -34,7 +34,7 @@ class SymbolTable {
     // constructor
     SymbolTable(int cap);
 
-	// adds a new key to the SymbolTable if it doesn't exist already
+    // adds a new key to the SymbolTable if it doesn't exist already
     // returns the position of the new key 
     int add(TKey k);
 
