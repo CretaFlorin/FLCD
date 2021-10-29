@@ -1,26 +1,51 @@
-#ifndef SymbolTable_h
-#define SymbolTable_h
-#include "sll.h"
+#pragma once
+
+#include <vector>
+#include <utility>
+#include <string>
+
+using namespace std;
+
+typedef string TKey;
+#define NULL_TKEY -111111
+#define NULL_POSITION -111111
+
+struct SLLNode {
+	TKey data;
+	SLLNode* next;
+};
+
+struct SLL {
+	SLLNode* root;
+};
 
 
-typedef struct SymbolTable {
-    SLL** T;  
-    int m;     
-} SymbolTable;
+class SymbolTable {
+    private:
+        SLL* T;                 // The table
+        int m;                  // The capacity
+        int dim;                // The number of keys in the table
+    public:    int hash(TKey) const;   // The hash function
 
+    public:
 
-SymbolTable* CreateSymbolTable(int dim);
+    void details();
 
-int Hash(SymbolTable* ht, int key);
+    // constructor
+    SymbolTable(int cap);
 
-void printSymbolTable(SymbolTable* ht);
+	// adds a new key to the SymbolTable if it doesn't exist already
+    // returns the position of the new key 
+    int add(TKey k);
 
+	// returns the position of the key or NULL_POSITION if the key doesn't exist
+    int search(TKey k) const;
 
-void addKey(SymbolTable* ht, int key);
+	// removes a key from the SymbolTable
+	// returns the position of the key or NULL_POSITION if the key doesn't exist
+    int remove(TKey k);
 
-void removeKey(SymbolTable* ht, int key);
+    //verifies if the SymbolTable is empty
+    bool isEmpty() const;
 
-int searchKey(SymbolTable* ht, int key);
-
-
-#endif // SymbolTable_h
+};

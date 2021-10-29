@@ -1,0 +1,14 @@
+$
+    Integer a;
+    Integer b;
+
+    Read(a);
+    Read(b);
+
+    repeat {
+        {a <- a-b;} cond (a > b);
+        {b <- b-a;} cond (b > a);
+    } cond (a != b);
+    
+    Write(a);
+$

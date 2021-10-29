@@ -1,0 +1,21 @@
+$
+    Array<Integer> numbers;
+    Integer n;
+    Integer sum<-0;
+    Integer i<-0;
+    
+    Read(n);
+    numbers.allocate(n); 
+
+    repeat {
+        Read(numbers[i]);
+        i <- i+1;
+    } cond (i<n);
+
+    repeat {
+        sum <- sum + numbers[i];
+        i <- i+1;
+    } cond (i<n);
+
+    Write(sum);
+$

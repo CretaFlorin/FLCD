@@ -1,0 +1,16 @@
+$
+    Integer a;
+    Integer b;
+    Integer c;
+    Integer max<-0;
+
+    Read(a);
+    Read(b);
+    Read(c);
+
+    max <- a;
+    {max <- b;} cond (b > a);
+    {max <- c;} cond (c > max);
+    
+    Write(max);
+$
