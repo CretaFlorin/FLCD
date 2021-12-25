@@ -1,6 +1,6 @@
 $
     Array<Integer> numbers;
-    Integer n;
+    Integer 2n;
     Integer sum<-0;
     Integer i<-0;
     

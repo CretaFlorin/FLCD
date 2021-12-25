@@ -1,0 +1,17 @@
+STATES
+q0
+q1
+INITIAL_STATE
+q0
+ALPHABET
+0
+1
+#
+TRANSITIONS
+q0,0,q0
+q0,#,q0
+q0,1,q1
+q1,0,q1
+q1,#,q1
+FINAL_STATES
+q1

@@ -29,23 +29,26 @@ class SymbolTable {
 
     public:
     
-    void details();
+    string details();
 
-    // constructor
+    // constructors
+    SymbolTable() {};
     SymbolTable(int cap);
 
     // adds a new key to the SymbolTable if it doesn't exist already
     // returns the position of the new key 
     int add(TKey k);
 
-	// returns the position of the key or NULL_POSITION if the key doesn't exist
+    // returns the position of the key or NULL_POSITION if the key doesn't exist
     int search(TKey k) const;
 
-	// removes a key from the SymbolTable
-	// returns the position of the key or NULL_POSITION if the key doesn't exist
+    // returns the position of the key or NULL_POSITION if the key doesn't exist
+    int positionInChain(TKey k) const;
+
+    // removes a key from the SymbolTable
+    // returns the position of the key or NULL_POSITION if the key doesn't exist
     int remove(TKey k);
 
     //verifies if the SymbolTable is empty
     bool isEmpty() const;
-
 };

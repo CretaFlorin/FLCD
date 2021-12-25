@@ -1,0 +1,87 @@
+$        - NULL
+Array    - NULL
+<        - NULL
+Integer  - NULL
+>        - NULL
+numbers  - (id) (10, 1)
+;        - NULL
+Integer  - NULL
+2n       - (const) (4, 0)
+;        - NULL
+Integer  - NULL
+sum      - (id) (7, 0)
+<-       - NULL
+0        - (const) (1, 0)
+;        - NULL
+Integer  - NULL
+i        - (id) (10, 0)
+<-       - NULL
+0        - (const) (1, 0)
+;        - NULL
+Read     - NULL
+(        - NULL
+n        - (id) (6, 0)
+)        - NULL
+;        - NULL
+numbers  - (id) (10, 1)
+.        - NULL
+allocate - NULL
+(        - NULL
+n        - (id) (6, 0)
+)        - NULL
+;        - NULL
+repeat   - NULL
+{        - NULL
+Read     - NULL
+(        - NULL
+numbers  - (id) (10, 1)
+[        - NULL
+i        - (id) (10, 0)
+]        - NULL
+)        - NULL
+;        - NULL
+i        - (id) (10, 0)
+<-       - NULL
+i        - (id) (10, 0)
++        - NULL
+1        - (const) (8, 0)
+;        - NULL
+}        - NULL
+cond     - NULL
+(        - NULL
+i        - (id) (10, 0)
+<        - NULL
+n        - (id) (6, 0)
+)        - NULL
+;        - NULL
+repeat   - NULL
+{        - NULL
+sum      - (id) (7, 0)
+<-       - NULL
+sum      - (id) (7, 0)
++        - NULL
+numbers  - (id) (10, 1)
+[        - NULL
+i        - (id) (10, 0)
+]        - NULL
+;        - NULL
+i        - (id) (10, 0)
+<-       - NULL
+i        - (id) (10, 0)
++        - NULL
+1        - (const) (8, 0)
+;        - NULL
+}        - NULL
+cond     - NULL
+(        - NULL
+i        - (id) (10, 0)
+<        - NULL
+n        - (id) (6, 0)
+)        - NULL
+;        - NULL
+Write    - NULL
+(        - NULL
+sum      - (id) (7, 0)
+)        - NULL
+;        - NULL
+$        - NULL

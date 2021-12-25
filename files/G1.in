@@ -1,0 +1,15 @@
+NON_TERMINAL
+S
+TERMINAL
+a
+b
+c
+RULES
+S -> aSb
+S -> c
+A -> aa
+A -> aSb
+B -> bb
+A -> c
+START
+S

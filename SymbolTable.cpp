@@ -2,27 +2,30 @@
 #include "SymbolTable.h"
 
 
-void SymbolTable::details()
+string SymbolTable::details()
 {
-	cout << "--------------- SymbolTable ----------------\n";
-	cout << "Capacity: " << this->m << endl;
-	cout << "Dimension: " << this->dim << endl;
-	cout << "The Table: \n";
+    string result = "";
+	result += "--------------- SymbolTable ----------------\n";
+	result += "Capacity: " + to_string(this->m) + "\n";
+	result += "Dimension: " + to_string(this->dim) + "\n";
+	result += "The Table: \n";
 	for (int i = 0; i < this->m; i++)
 	{
-		cout << "T[" << i << "]: ";
+		result += "T[" + to_string(i) + "]: ";
 		SLLNode* aux = this->T[i].root;
         while(aux != NULL)
         {
-            cout << aux->data;
+            result += aux->data;
             if(aux->next != NULL)
-                cout << " -> ";
+                result +=  " -> ";
             aux = aux->next;
         }
-		cout << "\n";
+		result += "\n";
 	}
 
-	cout << endl;
+	result += "\n";
+
+    return result;
 }
 
 
@@ -108,6 +111,24 @@ int SymbolTable::search(TKey key) const
         if(aux->data == key)
             return position;
         aux = aux->next;
+    }
+
+    return NULL_POSITION;
+}
+
+
+int SymbolTable::positionInChain(TKey key) const
+{
+    int position = this->hash(key);
+    int pos = 0;
+    SLLNode* aux = this->T[position].root;
+
+    while(aux != NULL)
+    {
+        if(aux->data == key)
+            return pos;
+        aux = aux->next;
+        pos++;
     }
 
     return NULL_POSITION;
